@@ -7,7 +7,7 @@
             <img src="/images/jurpan.png" alt="logo">
         </span>
         <span class="logo-sm">
-            <img src="/images/jurpan.png" alt="small logo">
+            <img src="/images/jp.png" alt="small logo">
         </span>
     </a>
 
@@ -374,10 +374,22 @@
                 <div class="collapse" id="sidebarMaps">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('second', ['maps', 'google']) }}">Google Maps</a>
+                            <a href="{{ route('second', ['maps', 'google']) }}">Kontak</a>
                         </li>
                         <li>
-                            <a href="{{ route('second', ['maps', 'vector']) }}">Vector Maps</a>
+                            <a href="{{ route('second', ['maps', 'vector']) }}">Ketentuan Layanan</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('second', ['maps', '']) }}">Pertanyaan Umum</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('second', ['maps', '']) }}">Jam Kerja</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('second', ['maps', '']) }}">Target Pesanan</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('second', ['maps', '']) }}">Keuntungan</a>
                         </li>
                     </ul>
                 </div>
