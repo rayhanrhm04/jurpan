@@ -36,6 +36,15 @@
                 </a>
             </li>
 
+            
+            <li class="side-nav-item">
+                <a href="{{ route('any', 'index') }}" class="side-nav-link">
+                    <i class="bi bi-people-fill"></i>
+                    <span class="badge bg-success float-end"></span>
+                    <span> Pengguna </span>
+                </a>
+            </li>
+
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages"
                     class="side-nav-link">
