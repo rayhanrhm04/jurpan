@@ -26,7 +26,7 @@
                     <div class="float-end">
                         <i class="ri-wallet-2-line widget-icon"></i>
                     </div>
-                    <h6 class="text-uppercase mt-0" title="Customers">Revenue</h6>
+                    <h6 class="text-uppercase mt-0" title="Customers">Total Saldo Anda</h6>
                     <h2 class="my-2">$9,254.62</h2>
                     <p class="mb-0">
                         <span class="badge bg-white bg-opacity-10 me-1">18.25%</span>
@@ -42,7 +42,7 @@
                     <div class="float-end">
                         <i class="ri-shopping-basket-line widget-icon"></i>
                     </div>
-                    <h6 class="text-uppercase mt-0" title="Customers">Orders</h6>
+                    <h6 class="text-uppercase mt-0" title="Customers">Total Pemesanan Anda</h6>
                     <h2 class="my-2">753</h2>
                     <p class="mb-0">
                         <span class="badge bg-white bg-opacity-25 me-1">-5.75%</span>
@@ -58,7 +58,7 @@
                     <div class="float-end">
                         <i class="ri-group-2-line widget-icon"></i>
                     </div>
-                    <h6 class="text-uppercase mt-0" title="Customers">Users</h6>
+                    <h6 class="text-uppercase mt-0" title="Customers">Total Deposit</h6>
                     <h2 class="my-2">63,154</h2>
                     <p class="mb-0">
                         <span class="badge bg-white bg-opacity-10 me-1">8.21%</span>
@@ -171,108 +171,7 @@
     <!-- end row -->
 
     <div class="row">
-        <div class="col-xl-4">
-            <!-- Chat-->
-            <div class="card">
-                <div class="card-body p-0">
-                    <div class="p-3">
-                        <div class="card-widgets">
-                            <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
-                            <a data-bs-toggle="collapse" href="#yearly-sales-collapse" role="button"
-                                aria-expanded="false" aria-controls="yearly-sales-collapse"><i
-                                    class="ri-subtract-line"></i></a>
-                            <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
-                        </div>
-                        <h5 class="header-title mb-0">Chat</h5>
-                    </div>
-
-                    <div id="yearly-sales-collapse" class="collapse show">
-                        <div class="chat-conversation mt-2">
-                            <div class="card-body py-0 mb-3" data-simplebar style="height: 322px;">
-                                <ul class="conversation-list">
-                                    <li class="clearfix">
-                                        <div class="chat-avatar">
-                                            <img src="/images/users/avatar-5.jpg" alt="male">
-                                            <i>10:00</i>
-                                        </div>
-                                        <div class="conversation-text">
-                                            <div class="ctext-wrap">
-                                                <i>Geneva</i>
-                                                <p>
-                                                    Hello!
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix odd">
-                                        <div class="chat-avatar">
-                                            <img src="/images/users/avatar-1.jpg" alt="Female">
-                                            <i>10:01</i>
-                                        </div>
-                                        <div class="conversation-text">
-                                            <div class="ctext-wrap">
-                                                <i>Thomson</i>
-                                                <p>
-                                                    Hi, How are you? What about our next meeting?
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix">
-                                        <div class="chat-avatar">
-                                            <img src="/images/users/avatar-5.jpg" alt="male">
-                                            <i>10:01</i>
-                                        </div>
-                                        <div class="conversation-text">
-                                            <div class="ctext-wrap">
-                                                <i>Geneva</i>
-                                                <p>
-                                                    Yeah everything is fine
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix odd">
-                                        <div class="chat-avatar">
-                                            <img src="/images/users/avatar-1.jpg" alt="male">
-                                            <i>10:02</i>
-                                        </div>
-                                        <div class="conversation-text">
-                                            <div class="ctext-wrap">
-                                                <i>Thomson</i>
-                                                <p>
-                                                    Wow that's great
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-body pt-0">
-                                <form class="needs-validation" novalidate name="chat-form" id="chat-form">
-                                    <div class="row align-items-start">
-                                        <div class="col">
-                                            <input type="text" class="form-control chat-input"
-                                                placeholder="Enter your text" required>
-                                            <div class="invalid-feedback">
-                                                Please enter your messsage
-                                            </div>
-                                        </div>
-                                        <div class="col-auto d-grid">
-                                            <button type="submit"
-                                                class="btn btn-danger chat-send waves-effect waves-light">Send</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div> <!-- end .chat-conversation-->
-                    </div>
-                </div>
-
-            </div> <!-- end card-->
-        </div> <!-- end col-->
-
+        
         <div class="col-xl-8">
             <!-- Todo-->
             <div class="card">

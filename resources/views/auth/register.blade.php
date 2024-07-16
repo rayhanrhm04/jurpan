@@ -22,10 +22,10 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="auth-brand p-4">
                                         <a href="{{ route('any', 'index') }}" class="logo-light">
-                                            <img src="/images/logo.png" alt="logo" height="22">
+                                            <img src="/images/jurpanlogo1.png" alt="logo" height="22">
                                         </a>
                                         <a href="{{ route('any', 'index') }}" class="logo-dark">
-                                            <img src="/images/logo-dark.png" alt="dark logo" height="22">
+                                            <img src="/images/jurpanlogo1.png" alt="dark logo" height="22">
                                         </a>
                                     </div>
                                     <div class="p-4 my-auto">
@@ -62,20 +62,6 @@
                                             <div class="mb-0 d-grid text-center">
                                                 <button class="btn btn-primary fw-semibold" type="submit">Sign
                                                     Up</button>
-                                            </div>
-
-                                            <div class="text-center mt-4">
-                                                <p class="text-muted fs-16">Sign in with</p>
-                                                <div class="d-flex gap-2 justify-content-center mt-3">
-                                                    <a href="javascript: void(0);" class="btn btn-soft-primary"><i
-                                                            class="ri-facebook-circle-fill"></i></a>
-                                                    <a href="javascript: void(0);" class="btn btn-soft-danger"><i
-                                                            class="ri-google-fill"></i></a>
-                                                    <a href="javascript: void(0);" class="btn btn-soft-info"><i
-                                                            class="ri-twitter-fill"></i></a>
-                                                    <a href="javascript: void(0);" class="btn btn-soft-dark"><i
-                                                            class="ri-github-fill"></i></a>
-                                                </div>
                                             </div>
                                         </form>
                                         <!-- end form-->
