@@ -55,7 +55,7 @@
                 <div class="collapse" id="sidebarPages">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('second', ['pages', 'starter']) }}">Pemesanan Single</a>
+                            <a href="{{ route('second', ['order', 'createOrder']) }}">Pemesanan Single</a>
                         </li>
                         <li>
                             <a href="{{ route('second', ['pages', 'contact-list']) }}">Pemesanan Massal</a>

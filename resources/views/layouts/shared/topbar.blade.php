@@ -157,12 +157,6 @@
             </li>
 
             <li class="d-none d-sm-inline-block">
-                <a class="nav-link" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
-                    <i class="ri-settings-3-line fs-22"></i>
-                </a>
-            </li>
-
-            <li class="d-none d-sm-inline-block">
                 <div class="nav-link" id="light-dark-mode">
                     <i class="ri-moon-line fs-22"></i>
                 </div>
@@ -197,7 +191,18 @@
                         <span>Settings</span>
                     </a>
                     
-               
+                    <!-- item-->
+                    <a href="pages-faq.html" class="dropdown-item">
+                        <i class="ri-customer-service-2-line fs-18 align-middle me-1"></i>
+                        <span>Support</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="auth-lock-screen.html" class="dropdown-item">
+                        <i class="ri-lock-password-line fs-18 align-middle me-1"></i>
+                        <span>Lock Screen</span>
+                    </a>
+
                     <!-- item-->
                     <a href="" class="dropdown-item">
                         <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
