@@ -84,10 +84,10 @@
                 <div class="collapse" id="sidebarCharts">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('second', ['charts', 'apex']) }}">Deposit Baru</a>
+                            <a href="{{ route('second', ['deposit', 'createDepo']) }}">Deposit Baru</a>
                         </li>
                         <li>
-                            <a href="{{ route('second', ['charts', 'chartjs']) }}">Riwayat Deposit</a>
+                            <a href="{{ route('second', ['deposit', 'historyDepo']) }}">Riwayat Deposit</a>
                         </li>
                         {{-- <li>
                             <a href="{{ route('second', ['charts', 'sparklines']) }}">Sparkline Charts</a>
