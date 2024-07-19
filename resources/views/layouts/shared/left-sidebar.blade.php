@@ -37,13 +37,13 @@
             </li>
 
             
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a href="{{ route('any', 'index') }}" class="side-nav-link">
                     <i class="bi bi-people-fill"></i>
                     <span class="badge bg-success float-end"></span>
                     <span> Pengguna </span>
                 </a>
-            </li>
+            </li> --}}
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages"
@@ -61,7 +61,7 @@
                             <a href="{{ route('second', ['pages', 'contact-list']) }}">Pemesanan Massal</a>
                         </li>
                         <li>
-                            <a href="{{ route('second', ['pages', 'profile']) }}">Riwayat Pesanan</a>
+                            <a href="{{ route('second', ['order', 'historyOrder']) }}">Riwayat Pesanan</a>
                         </li>
                         <li>
                             <a href="{{ route('second', ['pages', 'timeline']) }}">Riwayat Refill</a>
@@ -106,7 +106,7 @@
                 <div class="collapse" id="sidebarForms">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('second', ['forms', 'elements']) }}">Daftar Harga</a>
+                            <a href="{{ route('second', ['services', 'price']) }}">Daftar Harga</a>
                         </li>
                         <li>
                             <a href="{{ route('second', ['forms', 'advanced']) }}">Monitoring</a>

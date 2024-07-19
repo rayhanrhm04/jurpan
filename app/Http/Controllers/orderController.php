@@ -11,4 +11,8 @@ class orderController extends Controller
 {
     return view('order.createOrder');
 }
+
+    public function history(){
+        return view('order.historyOrder');
+    }
 }
