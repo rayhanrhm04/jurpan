@@ -114,21 +114,7 @@
                         <li>
                             <a href="{{ route('second', ['forms', 'validation']) }}">Dokumentasi API</a>
                         </li>
-                        {{-- <li>
-                            <a href="{{ route('second', ['forms', 'wizard']) }}">Form Wizard</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['forms', 'fileuploads']) }}">File Uploads</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['forms', 'editors']) }}">Form Editors</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['forms', 'image-crop']) }}">Image Crop</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['forms', 'x-editable']) }}">X Editable</a>
-                        </li> --}}
+                     
                     </ul>
                 </div>
             </li>
@@ -143,10 +129,10 @@
                 <div class="collapse" id="sidebarTables">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('second', ['tables', 'basic']) }}">Reedem Voucher</a>
+                            <a href="{{ route('second', ['voucher', 'redeem']) }}">Reedem Voucher</a>
                         </li>
                         <li>
-                            <a href="{{ route('second', ['tables', 'datatable']) }}">Riwayat Voucher</a>
+                            <a href="{{ route('second', ['voucher', 'historyvoucher']) }}">Riwayat Voucher</a>
                         </li>
                         {{-- <li>
                             <a href="{{ route('second', ['tables', 'editable']) }}">Editable Tables</a>

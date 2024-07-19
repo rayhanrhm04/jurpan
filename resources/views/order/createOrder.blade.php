@@ -36,43 +36,45 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="general" role="tabpanel">
                             <div class="row">
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('all')" class="btn btn-outline-dark btn-block mb-4 btn-filter-category" data-category="all"><i class="fa fa-list mr-2"></i> Semua Kategori</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('instagram')" class="btn btn-outline-dark btn-block mb-4 btn-filter-category" data-category="instagram"><i class="mdi mdi-instagram mr-2"></i> Instagram</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('facebook')" class="btn btn-outline-dark btn-block mb-4 btn-filter-category" data-category="facebook"><i class="mdi mdi-facebook mr-2"></i> Facebook</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('youtube')" class="btn btn-outline-dark btn-block mb-3 btn-filter-category" data-category="youtube"><i class="mdi mdi-youtube mr-2"></i> Youtube</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('twitter')" class="btn btn-outline-dark btn-block mb-3 btn-filter-category" data-category="twitter"><i class="mdi mdi-twitter mr-2"></i> Twitter</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('spotify')" class="btn btn-outline-dark btn-block mb-3 btn-filter-category" data-category="spotify"><i class="mdi mdi-spotify mr-2"></i> Spotify</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('tiktok')" class="btn btn-outline-dark btn-block mb-3 btn-filter-category" data-category="tiktok"><i class="mdi mdi-music mr-2"></i> Tiktok</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('linkedin')" class="btn btn-outline-dark btn-block mb-3 btn-filter-category" data-category="linkedin"><i class="mdi mdi-linkedin mr-2"></i> Linkedin</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('google')" class="btn btn-outline-dark btn-block mb-3 btn-filter-category" data-category="google"><i class="mdi mdi-linkedin mr-2"></i> Google</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('telegram')" class="btn btn-outline-dark btn-block mb-3 btn-filter-category" data-category="telegram"><i class="mdi mdi-telegram mr-2"></i> Telegram</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('web')" class="btn btn-outline-dark btn-block mb-3 btn-filter-category" data-category="web"><i class="fa fa-globe mr-2"></i> Web Traffic</button>
                                 </div>
-                                <div class="col-6 col-lg-3">
+                                <div class="col-12 col-lg-4">
                                     <button type="button" onclick="categoryFilter('other')" class="btn btn-outline-dark btn-block mb-3 btn-filter-category" data-category="other"><i class="fa fa-list-alt mr-2"></i> Other</button>
                                 </div>
                             </div>
+                   
+                
                             <div class="mb-3">
                                 <label class="form-label">Kategori <span class="text-danger">*</span></label>
                                 <select class="select2 form-control" id="category">
