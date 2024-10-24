@@ -78,4 +78,15 @@ class RoutingController extends Controller
         
         return view($first . '.' . $second . '.' . $third, ['mode' => $mode, 'demo' => $demo]);
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();  // Logout user
+        
+        $request->session()->invalidate();  // Hapus session yang tersimpan
+        
+        $request->session()->regenerateToken();  // Regenerate CSRF token
+        
+        return redirect('/login');  // Redirect ke halaman login
+    }
 }

@@ -93,7 +93,7 @@
         <span class="text-dark">
             <script>
                 document.write(new Date().getFullYear())
-            </script> © Velonic - Theme by Techzaa
+            </script> © Juraganpanel
         </span>
     </footer>
 

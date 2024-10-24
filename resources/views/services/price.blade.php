@@ -58,7 +58,6 @@
                                     </tr>
                                     <tr class="text-uppercase">
                                         <th>ID</th>
-                                        <th>Favorit</th>
                                         <th>Layanan</th>
                                         <th>Min</th>
                                         <th>Maks</th>
@@ -68,7 +67,6 @@
                                 <tbody id="tbody-">
                                     
                                         <tr>
-                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>

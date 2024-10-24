@@ -102,7 +102,8 @@
                     </a>
 
                     <!-- item-->
-                    <a href="" class="dropdown-item">
+                    <a href="{{ route('logout') }} method="POST" class="dropdown-item">
+                        @csrf
                         <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
                         <span>Logout</span>
                     </a>

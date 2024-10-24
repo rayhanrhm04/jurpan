@@ -1,7 +1,7 @@
-@extends('layouts.vertical', ['title' => 'Deposit', 'mode' => $mode ?? '', 'demo' => $demo ?? ''])
+@extends('layouts.vertical', ['title' => 'Voucher', 'mode' => $mode ?? '', 'demo' => $demo ?? ''])
 
 @section('content')
-@include('layouts.shared.page-title', ['sub_title' => 'Deposit', 'page_title' => 'Deposit Baru'])
+@include('layouts.shared.page-title', ['sub_title' => 'Voucher', 'page_title' => 'Redeem'])
 
 <div class="row">
     <div class="col-md-8">

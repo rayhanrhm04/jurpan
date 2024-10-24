@@ -58,16 +58,7 @@
                             <a href="{{ route('second', ['order', 'createOrder']) }}">Pemesanan Single</a>
                         </li>
                         <li>
-                            <a href="{{ route('second', ['pages', 'contact-list']) }}">Pemesanan Massal</a>
-                        </li>
-                        <li>
                             <a href="{{ route('second', ['order', 'historyOrder']) }}">Riwayat Pesanan</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['pages', 'timeline']) }}">Riwayat Refill</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['pages', 'invoice']) }}">Layanan Favorit</a>
                         </li>
                     </ul>
                 </div>
@@ -89,9 +80,6 @@
                         <li>
                             <a href="{{ route('second', ['deposit', 'historyDepo']) }}">Riwayat Deposit</a>
                         </li>
-                        {{-- <li>
-                            <a href="{{ route('second', ['charts', 'sparklines']) }}">Sparkline Charts</a>
-                        </li> --}}
                     </ul>
                 </div>
             </li>
@@ -107,12 +95,6 @@
                     <ul class="side-nav-second-level">
                         <li>
                             <a href="{{ route('second', ['services', 'price']) }}">Daftar Harga</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['forms', 'advanced']) }}">Monitoring</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['forms', 'validation']) }}">Dokumentasi API</a>
                         </li>
                      
                     </ul>
@@ -134,17 +116,11 @@
                         <li>
                             <a href="{{ route('second', ['voucher', 'historyvoucher']) }}">Riwayat Voucher</a>
                         </li>
-                        {{-- <li>
-                            <a href="{{ route('second', ['tables', 'editable']) }}">Editable Tables</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['tables', 'responsive']) }}">Responsive Table</a>
-                        </li> --}}
                     </ul>
                 </div>
             </li>
 
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarMaps" aria-expanded="false" aria-controls="sidebarMaps"
                     class="side-nav-link">
                     <i class="ri-map-pin-line"></i>
@@ -173,7 +149,7 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
 
             {{-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarMultiLevel" aria-expanded="false"
