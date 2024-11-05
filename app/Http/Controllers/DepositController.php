@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 class DepositController extends Controller
 {
     //
-    public function create()
+    public function index()
 {
     return view('deposit.createDepo');
 }
 
-public function edit()
+public function history()
 {
     return view('deposit.historyDepo');
 }

@@ -21,47 +21,54 @@
                             <div class="col-lg-6">
                                 <div class="d-flex flex-column h-100">
                                     <div class="auth-brand p-4">
-                                        <a href="{{ route('any', 'index') }}" class="logo-light">
+                                        <a href="{{ route('register') }}" class="logo-light">
                                             <img src="/images/jurpanlogo1.png" alt="logo" height="22">
                                         </a>
-                                        <a href="{{ route('any', 'index') }}" class="logo-dark">
+                                        <a href="{{ route('register') }}" class="logo-dark">
                                             <img src="/images/jurpanlogo1.png" alt="dark logo" height="22">
                                         </a>
                                     </div>
                                     <div class="p-4 my-auto">
                                         <h4 class="fs-20">Free Sign Up</h4>
                                         <p class="text-muted mb-3">Enter your email address and password to access
-                                            account.</p>
+                                            your account.</p>
 
+                                        <!-- Menampilkan pesan kesalahan -->
+                                        @if ($errors->any())
+                                            <div class="error-messages">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                        
                                         <!-- form -->
-                                        <form action="#">
+                                        <form action="{{ route('register') }}" method="POST">
+                                            @csrf
                                             <div class="mb-3">
                                                 <label for="fullname" class="form-label">Full Name</label>
-                                                <input class="form-control" type="text" id="fullname"
-                                                    placeholder="Enter your name" required="">
+                                                <input class="form-control" name="name" type="text" id="fullname"
+                                                    placeholder="Enter your name" value="{{ old('name') }}" required>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="emailaddress" class="form-label">Email address</label>
-                                                <input class="form-control" type="email" id="emailaddress" required=""
-                                                    placeholder="Enter your email">
+                                                <input class="form-control" name="email" type="email" id="emailaddress"
+                                                    placeholder="Enter your email" value="{{ old('email') }}" required>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="password" class="form-label">Password</label>
-                                                <input class="form-control" type="password" required="" id="password"
-                                                    placeholder="Enter your password">
+                                                <input class="form-control" name="password" type="password"
+                                                    id="password" placeholder="Enter your password" required>
                                             </div>
                                             <div class="mb-3">
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="checkbox-signup">
-                                                    <label class="form-check-label" for="checkbox-signup">I accept <a
-                                                            href="javascript: void(0);" class="text-muted">Terms and
-                                                            Conditions</a></label>
-                                                </div>
+                                                <label for="password_confirmation" class="form-label">Confirm Password</label>
+                                                <input class="form-control" name="password_confirmation" type="password"
+                                                    id="password_confirmation" placeholder="Confirm your password" required>
                                             </div>
                                             <div class="mb-0 d-grid text-center">
-                                                <button class="btn btn-primary fw-semibold" type="submit">Sign
-                                                    Up</button>
+                                                <button class="btn btn-primary fw-semibold" type="submit">Sign Up</button>
                                             </div>
                                         </form>
                                         <!-- end form-->
@@ -75,7 +82,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <p class="text-dark-emphasis">Already have account? <a href="{{ route('second', [ 'auth' , 'login']) }}" class="text-dark fw-bold ms-1 link-offset-3 text-decoration-underline"><b>Log In</b></a></p>
+                    <p class="text-dark-emphasis">Already have an account? <a href="{{ route('login') }}" class="text-dark fw-bold ms-1 link-offset-3 text-decoration-underline"><b>Log In</b></a></p>
                 </div> <!-- end col -->
             </div>
             <!-- end row -->

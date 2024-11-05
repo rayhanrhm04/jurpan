@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class deposit extends Model
 {
     use HasFactory;
+
+    
 }

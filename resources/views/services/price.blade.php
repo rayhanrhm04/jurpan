@@ -65,16 +65,17 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tbody-">
-                                    
+                                    @foreach($services as $service)
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>Rp </td>
+                                            <td>{{ $service->id }}</td>
+                                            <td>{{ $service->service_name }}</td>
+                                            <td>{{ $service->min }}</td>
+                                            <td>{{ $service->max }}</td>
+                                            <td>Rp {{ $service->price }}</td>
                                         </tr>
-                                    
+                                    @endforeach
                                 </tbody>
+                                
                                 <tfoot>
                                     <tr>
                                         <td colspan="5">
@@ -86,6 +87,9 @@
                                     </tr>
                                 </tfoot>
                             </table>
+                            <div class="d-flex">
+                                {!! $services->links() !!}
+                            </div>
                         </div>
             </div>
         </div>

@@ -3,8 +3,13 @@
 
 <head>
     @include('layouts.shared/title-meta', ['title' => 'Log In'])
-
     @include('layouts.shared/head-css', ['mode' => $mode ?? '', 'demo' => $demo ?? ''])
+    <style>
+        .auth-brand img {
+            max-height: 60px; /* Atur tinggi maksimum logo */
+            width: auto; /* Menjaga proporsi */
+        }
+    </style>
 </head>
 
 <body class="authentication-bg position-relative">
@@ -20,11 +25,11 @@
                             <div class="col-lg-6">
                                 <div class="d-flex flex-column h-100">
                                     <div class="auth-brand p-4">
-                                        <a href="{{ route('any', 'index') }}" class="logo-light">
-                                            <img src="/images/jurpanlogo1.png" alt="logo" height="40">
+                                        <a href="{{ route('login') }}" class="logo-light">
+                                            <img src="/images/jurpanlogo1.png" alt="logo" class="img-fluid">
                                         </a>
-                                        <a href="{{ route('any', 'index') }}" class="logo-dark">
-                                            <img src="/images/jurpanlogo1.png" alt="dark logo" height="40">
+                                        <a href="{{ route('login') }}" class="logo-dark">
+                                            <img src="/images/jurpanlogo1.png" alt="dark logo" class="img-fluid">
                                         </a>
                                     </div>
                                     <div class="p-4 my-auto">

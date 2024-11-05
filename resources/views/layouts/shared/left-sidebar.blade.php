@@ -2,7 +2,7 @@
 <div class="leftside-menu">
 
     <!-- Brand Logo Light -->
-    <a href="{{ route('any', 'index') }}" class="logo logo-light">
+    <a href="{{ route('dashboard') }}" class="logo logo-light">
         <span class="logo-lg">
             <img src="/images/jurpan.png" alt="logo">
         </span>
@@ -12,7 +12,7 @@
     </a>
 
     <!-- Brand Logo Dark -->
-    <a href="{{ route('any', 'index') }}" class="logo logo-dark">
+    <a href="{{ route('dashboard') }}" class="logo logo-dark">
         <span class="logo-lg">
             <img src="/images/jurpan.png" alt="dark logo">
         </span>
@@ -29,191 +29,81 @@
             <li class="side-nav-title">Main</li>
 
             <li class="side-nav-item">
-                <a href="{{ route('any', 'index') }}" class="side-nav-link">
+                <a href="{{ route('dashboard') }}" class="side-nav-link">
                     <i class="ri-dashboard-3-line"></i>
                     <span class="badge bg-success float-end">9+</span>
-                    <span> Dashboard </span>
+                    <span>Dashboard</span>
                 </a>
             </li>
 
-            
-            {{-- <li class="side-nav-item">
-                <a href="{{ route('any', 'index') }}" class="side-nav-link">
-                    <i class="bi bi-people-fill"></i>
-                    <span class="badge bg-success float-end"></span>
-                    <span> Pengguna </span>
-                </a>
-            </li> --}}
-
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages"
-                    class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarPemesanan" aria-expanded="false" aria-controls="sidebarPemesanan" class="side-nav-link">
                     <i class="ri-pages-line"></i>
-                    <span> Pemesanan </span>
+                    <span>Pemesanan</span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse" id="sidebarPages">
+                <div class="collapse" id="sidebarPemesanan">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('second', ['order', 'createOrder']) }}">Pemesanan Single</a>
+                            <a href="{{ route('order') }}">Pemesanan Single</a>
                         </li>
                         <li>
-                            <a href="{{ route('second', ['order', 'historyOrder']) }}">Riwayat Pesanan</a>
+                            <a href="{{ route('historyorder') }}">Riwayat Pesanan</a>
                         </li>
                     </ul>
                 </div>
             </li>
 
-
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarCharts" aria-expanded="false"
-                    aria-controls="sidebarCharts" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarDeposit" aria-expanded="false" aria-controls="sidebarDeposit" class="side-nav-link">
                     <i class="ri-donut-chart-fill"></i>
-                    <span> Deposit </span>
+                    <span>Deposit</span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse" id="sidebarCharts">
+                <div class="collapse" id="sidebarDeposit">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('second', ['deposit', 'createDepo']) }}">Deposit Baru</a>
+                            <a href="{{ route('deposit') }}">Deposit Baru</a>
                         </li>
                         <li>
-                            <a href="{{ route('second', ['deposit', 'historyDepo']) }}">Riwayat Deposit</a>
+                            <a href="{{ route('historydeposit') }}">Riwayat Deposit</a>
                         </li>
                     </ul>
                 </div>
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarForms" aria-expanded="false" aria-controls="sidebarForms"
-                    class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarLayanan" aria-expanded="false" aria-controls="sidebarLayanan" class="side-nav-link">
                     <i class="ri-survey-line"></i>
-                    <span> Layanan </span>
+                    <span>Layanan</span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse" id="sidebarForms">
+                <div class="collapse" id="sidebarLayanan">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('second', ['services', 'price']) }}">Daftar Harga</a>
+                            <a href="{{ route('services') }}">Daftar Harga</a>
                         </li>
-                     
                     </ul>
                 </div>
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarTables" aria-expanded="false"
-                    aria-controls="sidebarTables" class="side-nav-link">
+                <a data-bs-toggle="collapse" href="#sidebarVoucher" aria-expanded="false" aria-controls="sidebarVoucher" class="side-nav-link">
                     <i class="ri-table-line"></i>
-                    <span> Voucher </span>
+                    <span>Voucher</span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse" id="sidebarTables">
+                <div class="collapse" id="sidebarVoucher">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('second', ['voucher', 'redeem']) }}">Reedem Voucher</a>
+                            <a href="{{ route('redeem') }}">Redeem Voucher</a>
                         </li>
                         <li>
-                            <a href="{{ route('second', ['voucher', 'historyvoucher']) }}">Riwayat Voucher</a>
+                            <a href="{{ route('historyredeem') }}">Riwayat Voucher</a>
                         </li>
                     </ul>
                 </div>
             </li>
-
-            {{-- <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarMaps" aria-expanded="false" aria-controls="sidebarMaps"
-                    class="side-nav-link">
-                    <i class="ri-map-pin-line"></i>
-                    <span> Sitemap </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarMaps">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{ route('second', ['maps', 'google']) }}">Kontak</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['maps', 'vector']) }}">Ketentuan Layanan</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['maps', '']) }}">Pertanyaan Umum</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['maps', '']) }}">Jam Kerja</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['maps', '']) }}">Target Pesanan</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('second', ['maps', '']) }}">Keuntungan</a>
-                        </li>
-                    </ul>
-                </div>
-            </li> --}}
-
-            {{-- <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarMultiLevel" aria-expanded="false"
-                    aria-controls="sidebarMultiLevel" class="side-nav-link">
-                    <i class="ri-share-line"></i>
-                    <span> Log </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarMultiLevel">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="javascript: void(0);">Level 1.1</a>
-                        </li>
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarSecondLevel" aria-expanded="false"
-                                aria-controls="sidebarSecondLevel">
-                                <span> Level 1.2 </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarSecondLevel">
-                                <ul class="side-nav-third-level">
-                                    <li>
-                                        <a href="javascript: void(0);">Item 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript: void(0);">Item 2</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarThirdLevel" aria-expanded="false"
-                                aria-controls="sidebarThirdLevel">
-                                <span> Level 1.3 </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarThirdLevel">
-                                <ul class="side-nav-third-level">
-                                    <li>
-                                        <a href="javascript: void(0);">Item 1</a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel" aria-expanded="false"
-                                            aria-controls="sidebarFourthLevel">
-                                            <span> Item 2 </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel">
-                                            <ul class="side-nav-forth-level">
-                                                <li>
-                                                    <a href="javascript: void(0);">Item 2.1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript: void(0);">Item 2.2</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li> --}}
 
         </ul>
         <!--- End Sidemenu -->

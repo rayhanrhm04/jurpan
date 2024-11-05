@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class VoucherController extends Controller
 {
     //
-    public function create(){
+    public function index(){
         return view('voucher.redeem');
     }
 

@@ -28,6 +28,9 @@
                         <label class="form-label">Kategori <span class="text-danger">*</span></label>
                         <select class="select2 form-control" id="category">
                             <option value="0">Pilih...</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                     
@@ -127,6 +130,93 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $('#category').change(function() {
+            var category_id = $('#category').val();
+            $('#service').empty();
+            $.ajax({
+                url: `{{route('ajax.layanan')}}`,
+                type: 'GET',
+                data: {
+                    category_id: category_id
+                },
+                success: function (data) {
+                    data.forEach(function (service) {
+                        $('#service').append(`<option value="${service.id}">${service.service_name}</option>`);
+                    });
+                },
+                error: function() {
+                    alert('Error');
+                }
+            })
+        });
+        $.ajax({
+            url: 'api.php',
+            type: 'GET',
+            data: {
+                menu: 'services'
+            },
+            success: function (data) {
+                data.data.forEach(function (service) {
+                    $('#services').append(`<option value="${service.id}">${service.name}</option>`);
+                });
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+
+        $('form').submit(function (e) {
+            e.preventDefault();
+            var service = $('#services').val();
+            var target = $('#target').val();
+            var quantity = $('#quantity').val();
+
+            $.ajax({
+                url: 'api.php',
+                type: 'POST',
+                data: {
+                    menu: 'newOrder',
+                    service: service,
+                    target: target,
+                    quantity: quantity
+                },
+                success: function (data) {
+                    $('#hasil').text(data.data.id);
+                    alert('Berhasil');
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('Gagal');
+                }
+            });
+        });
+
+        $('#cek').click(function () {
+            var order_id = $('#order_id').val();
+            $.ajax({
+                url: 'api.php',
+                type: 'POST',
+                data: {
+                    menu: 'checkStatus',
+                    order_id: order_id
+                },
+                success: function (data) {
+                    alert(data.data.status);
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert('Gagal');
+                }
+            });
+        });
+
+    });
+
+</script>
 
 
 @endsection
