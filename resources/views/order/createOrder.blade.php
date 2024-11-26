@@ -42,6 +42,7 @@
                     </div>
                     
                     <div class="mb-3">
+                        {{-- <textarea name="desc" id="description" cols="30" rows="10" readonly></textarea> --}}
                         <label class="form-label">Deskripsi</label>
                         <div class="form-control" style="white-space: pre-wrap;" id="description" name="desc" readonly>-</div>
                     </div>
@@ -152,7 +153,120 @@
                     alert('Error');
                 }
             })
+            // var category_id = $('#description').val();
+            $('#description').empty();
+            $.ajax({
+                url: `{{route('ajax.layanan')}}`,
+                type: 'GET',
+                data: {
+                    category_id: category_id
+                },
+                success: function (data) {
+                    data.forEach(function (service) {
+                        // $('#service').append(`<option value="${service.id}">${service.service_name}</option>`);
+                        $('#description').append(`<div value="${service.id}">${service.description}</div>`);
+                    });
+                },
+                error: function() {
+                    alert('Error');
+                }
+            })
+
+            $.ajax({
+                url: `{{route('ajax.layanan')}}`,
+                type: 'GET',
+                data: {
+                    category_id: category_id
+                },
+                success: function (data) {
+                    data.forEach(function (service) {
+                        $('#min-amount').append(` <input type="text" class="form-control" value="${service.id}">`);
+                        // $('#max-amount').append(`<div value="${service.id}">${service.max}</div>`);
+                    });
+                },
+                error: function() {
+                    alert('Error');
+                }
+            })
+
+            $.ajax({
+                url: `{{route('ajax.layanan')}}`,
+                type: 'GET',
+                data: {
+                    category_id: category_id
+                },
+                success: function (data) {
+                    data.forEach(function (service) {
+                        // $('#service').append(`<option value="${service.id}">${service.service_name}</option>`);
+                        $('#price').append(` <input type="text" class="form-control" value="${service.price}">`);
+                        // $('#max-amount').append(`<div value="${service.id}">${service.max}</div>`);
+                    });
+                },
+                error: function() {
+                    alert('Error');
+                }
+            })
         });
+
+        // $('#service').change(function() {
+        // var service = $('#service').val();
+        // $.ajax({
+        //     type: "POST",
+        //     url: '{{route('ajax.layanan')}}',
+        //     data: "service=" + service + "&csrf_token=<?= csrf_token(); ?>",
+        //     dataType: "json",
+        //     success: function(data) {
+        //         let description = data.description;
+        //         description.split('\n').join('<br>');
+
+        //         $('#description').html(description);
+        //         $('#average').val(data.average);
+        //         $('#min-amount').val(data.min);
+        //         $('#max-amount').val(data.max);
+        //         $('#price').val(data.price);
+        //         if (data.form_type == 'custom_comments') {
+        //             $('#input_custom_comments').removeClass('d-none');
+        //             $('#input_custom_link').addClass('d-none');
+        //             $('#quantity').attr('readonly', true);
+        //             $('#quantity').val('');
+        //             $('#custom_comments').val('');
+        //             $('#custom_link').val('');
+        //             $('#target').val('');
+        //             $('#total-price').val(0)
+        //         } else if (data.form_type == 'custom_link') {
+        //             $('#input_custom_comments').addClass('d-none');
+        //             $('#input_custom_link').removeClass('d-none');
+        //             $('#quantity').removeAttr('readonly');
+        //             $('#quantity').val('');
+        //             $('#custom_comments').val('');
+        //             $('#custom_link').val('');
+        //             $('#target').val('');
+        //             $('#total-price').val(0)
+        //         } else {
+        //             $('#input_custom_comments').addClass('d-none');
+        //             $('#input_custom_link').addClass('d-none');
+        //             $('#quantity').removeAttr('readonly');
+        //             $('#quantity').val('');
+        //             $('#custom_comments').val('');
+        //             $('#custom_link').val('');
+        //             $('#target').val('');
+        //             $('#total-price').val(0)
+        //         }
+        //     },
+        //     error: function() {
+        //         $('#ajax-result').html(
+        //             '<font color="red">Terjadi kesalahan! Silahkan refresh halaman.</font>'
+        //         );
+        //     }
+        // }).done(function(e) {
+        //     form_ajax = e.form;
+        //     $('#quantity').keyup(function() {
+        //         var service = $('#service').val();
+        //         var quantity = $('#quantity').val();
+        //         total_price(service, quantity);
+        //     });
+        
+
         $.ajax({
             url: 'api.php',
             type: 'GET',

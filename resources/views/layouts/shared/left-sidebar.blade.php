@@ -87,7 +87,7 @@
                 </div>
             </li>
 
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarVoucher" aria-expanded="false" aria-controls="sidebarVoucher" class="side-nav-link">
                     <i class="ri-table-line"></i>
                     <span>Voucher</span>
@@ -103,7 +103,7 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
 
         </ul>
         <!--- End Sidemenu -->

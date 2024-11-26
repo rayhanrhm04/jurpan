@@ -49,7 +49,7 @@ class AuthController extends Controller
             return redirect()->intended('/dashboard');
         }
 
-        return back()->withErrors(['email' => 'Email atau password salah']);
+        return back()->withErrors(['email' => 'Email atau password salah']); //error handling
     }
 
     public function logout()

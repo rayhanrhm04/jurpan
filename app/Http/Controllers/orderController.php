@@ -22,4 +22,9 @@ class orderController extends Controller
         $services= Services::where('category_id', '=', $category_id)->get();
         return response()->json($services);
     }
+
+    // public function description(Request $request){
+    //     $category_id = $request->get('category_id');
+    //     $services= Services::
+    // }
 }
