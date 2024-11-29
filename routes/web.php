@@ -51,6 +51,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/historyredeem', [VoucherController::class, 'history'])->name('historyredeem');
 
     Route::get('/ajax/get-layanan', [orderController::class, 'ajaxLayanan'])->name('ajax.layanan');
+    Route::get('/ajax/amount-and-price', [orderController::class, 'getAmountAndPrice'])->name('ajax.amountAndPrice');
     
     // Route khusus untuk admin
     Route::middleware(['admin'])->group(function () {
