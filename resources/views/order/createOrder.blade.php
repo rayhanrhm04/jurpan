@@ -60,6 +60,7 @@
                             <div class="input-group">
                                 <div class="input-group-text">Rp</div>
                                 <input type="text" class="form-control" value="0" id="price" readonly>
+                                <input type="hidden" id="rate" value="0" />
                             </div>
                         </div>
                     </div>
@@ -76,15 +77,15 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        {{-- <div class="col-md-6 mb-3">
                             <label class="form-label">Waktu Rata-Rata <span class="ml-1 mr-1 fa fa-exclamation-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Waktu rata-rata berdasarkan pesanan yang telah selesai."></span></label>
                             <input type="text" class="form-control" name="average" id="average" value="-" readonly>
-                        </div>
+                        </div> --}}
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Total Harga</label>
                             <div class="input-group">
                                 <div class="input-group-text">Rp</div>
-                                <input type="text" class="form-control" value="0" id="total-price" readonly>
+                                <input type="text" class="form-control" value="0" id="total-price" name="total-price" readonly>
                             </div>
                         </div>
                     </div>
@@ -97,6 +98,32 @@
             </div>
         </div>
     </div>
+    <div class="col-md-4">
+        <div class="card">
+            <h5 class="card-header"><i class="mdi mdi-information-outline me-1"></i>Informasi</h5>
+            <div class="card-body">
+                <b>Cara melakukan pemesanan:</b>
+                <ul>
+                    <li>Pilih <em><b>Kategori</b></em> yang Anda inginkan.</li>
+                    <li>Pilih <em><b>Layanan</b></em> yang Anda inginkan.</li>
+                    <li>Input <em><b>Jumlah Pesanan</b></em> yang Anda inginkan.</li>
+                    <li>Input <em><b>Target</b></em> pesanan yang sesuai.</li>
+                </ul>
+                <br>
+                <b>Penting!</b>
+                <ul>
+                    <li>Mohon untuk tidak melakukan pesanan dengan target yang sama jika pesanan sebelumnya belum
+                        selesai diproses, agar pesanan lancar dan tidak bermasalah.</li>
+                    <li>Jika Anda mendapat pesan gagal saat melakukan pemesanan, silakan informasikan layanan tersebut
+                        melalui <em><b><a href="">Tiket</a></b></em> atau hubungi Admin.
+                    </li>
+                    <li>Silahkan liat format target pemesenan  <em><b><a href="">disini</a></b></em> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -109,7 +136,8 @@
             $('#min-amount').val('0');
             $('#max-amount').val('0');
             $('#price').val('0');
-            $('#average').val('-');
+            $('#rate').val(0);
+            // $('#average').val('-');
 
             // Memuat layanan
             $.ajax({
@@ -120,6 +148,10 @@
                     data.forEach(function (service) {
                         $('#service').append(`<option value="${service.id}">${service.service_name}</option>`);
                         $('#description').append(`<div>${service.description}</div>`);
+                        $('#quantity').on('input', function () {
+                        $('#total-price').val($('#rate').val() * $('#quantity').val());
+                  });
+                        
                     });
                 },
                 error: function () {
@@ -137,6 +169,7 @@
                     $('#max-amount').val(data.max);
                     $('#price').val(data.price);
                     $('#average').val(data.average);
+                    $('#rate').val(data.price/1000);
                 },
                 error: function () {
                     alert('Error loading amount and price');

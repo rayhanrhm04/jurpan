@@ -87,23 +87,23 @@
                 </div>
             </li>
 
-            {{-- <li class="side-nav-item">
+            <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarVoucher" aria-expanded="false" aria-controls="sidebarVoucher" class="side-nav-link">
                     <i class="ri-table-line"></i>
-                    <span>Voucher</span>
+                    <span>Tiket</span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarVoucher">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('redeem') }}">Redeem Voucher</a>
+                            <a href="{{ route('ticket') }}">Buat Tiket</a>
                         </li>
                         <li>
-                            <a href="{{ route('historyredeem') }}">Riwayat Voucher</a>
+                            <a href="{{ route('list') }}">Riwayat Tiket</a>
                         </li>
                     </ul>
                 </div>
-            </li> --}}
+            </li>
 
         </ul>
         <!--- End Sidemenu -->

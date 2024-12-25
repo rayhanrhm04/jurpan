@@ -95,6 +95,15 @@
         </div>
     </div>
 </div>
+{{-- <script>
+    $(document).ready(function () {
+      $('#rate').val( {{ $service->price }} / 1000);
+
+      $('#jumlah').on('input', function () {
+        $('#total').val($('#rate').val() * $('#jumlah').val());
+      });
+    });
+  </script> --}}
 
 
 @endsection

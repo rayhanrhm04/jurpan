@@ -8,6 +8,7 @@ use App\Http\Controllers\orderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
 use App\Http\Controllers\serviceController;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\VoucherController;
 
 /*
@@ -49,6 +50,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/redeem', [VoucherController::class, 'index'])->name('redeem');
     Route::get('/historyredeem', [VoucherController::class, 'history'])->name('historyredeem');
+
+    Route::get('/ticket', [TicketController::class, 'create'])->name('ticket');
+    Route::get('/list', [TicketController::class, 'list'])->name('list');
+
+    // Route::get('/ticket', [TicketController::class, 'create'])->name('ticket');
+    // Route::get('/list', [TicketController::class, 'list'])->name('list');
 
     Route::get('/ajax/get-layanan', [orderController::class, 'ajaxLayanan'])->name('ajax.layanan');
     Route::get('/ajax/amount-and-price', [orderController::class, 'getAmountAndPrice'])->name('ajax.amountAndPrice');
