@@ -35,7 +35,7 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-
+            @if (Auth::check() && Auth::user()->role === 'user')
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPemesanan" aria-expanded="false" aria-controls="sidebarPemesanan" class="side-nav-link">
                     <i class="ri-pages-line"></i>
@@ -45,7 +45,7 @@
                 <div class="collapse" id="sidebarPemesanan">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('order') }}">Pemesanan Single</a>
+                            <a href="{{ route('order') }}">Pemesanan</a>
                         </li>
                         <li>
                             <a href="{{ route('historyorder') }}">Riwayat Pesanan</a>
@@ -96,16 +96,92 @@
                 <div class="collapse" id="sidebarVoucher">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('ticket') }}">Buat Tiket</a>
+                            <a href="{{ route('ticket.create') }}">Buat Tiket</a>
                         </li>
                         <li>
-                            <a href="{{ route('list') }}">Riwayat Tiket</a>
+                            <a href="{{ route('ticket.list') }}">Riwayat Tiket</a>
                         </li>
                     </ul>
                 </div>
             </li>
 
         </ul>
+        @else
+        <li class="side-nav-item">
+            <a data-bs-toggle="collapse" href="#sidebarDeposit" aria-expanded="false" aria-controls="sidebarDeposit" class="side-nav-link">
+                <i class="ri-donut-chart-fill"></i>
+                <span>Deposit</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarDeposit">
+                <ul class="side-nav-second-level">
+                    <li>
+                        <a href="{{ route('report-deposit') }}">Laporan Deposit</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('detail-deposit') }}">Detail Deposit</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="side-nav-item">
+            <a data-bs-toggle="collapse" href="#sidebarPemesanan" aria-expanded="false" aria-controls="sidebarPemesanan" class="side-nav-link">
+                <i class="ri-pages-line"></i>
+                <span>Pemesanan</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarPemesanan">
+                <ul class="side-nav-second-level">
+                    <li>
+                        <a href="{{ route('data-order') }}">Data Pemesanan</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('historyorder') }}">Riwayat Pesanan</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="side-nav-item">
+            <a data-bs-toggle="collapse" href="#sidebarPemesanan" aria-expanded="false" aria-controls="sidebarPemesanan" class="side-nav-link">
+                <i class="ri-user-line"></i>
+                <span>User</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarPemesanan">
+                <ul class="side-nav-second-level">
+                    <li>
+                        <a href="{{ route('buat-user') }}">Buat User</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('status-user') }}">Status User</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="side-nav-item">
+            <a data-bs-toggle="collapse" href="#sidebarTicket" aria-expanded="false" aria-controls="sidebarTicket" class="side-nav-link">
+                <i class="ri-ticket-line"></i>
+                <span>Tiket</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarTicket">
+                <ul class="side-nav-second-level">
+                    <!-- Daftar Tiket -->
+                    <li>
+                        <a href="{{ route('admin.ticket.list') }}">Daftar Tiket</a>
+                    </li>
+                    <!-- Reply Tiket (Admin menjawab tiket) -->
+                    {{-- <li>
+                        <a href="{{ route('admin.ticket.edit', ['ticket' => 1]) }}">Reply Tiket</a>
+                    </li> --}}
+                </ul>
+            </div>
+        </li>
+        
+        @endif
         <!--- End Sidemenu -->
 
         <div class="clearfix"></div>

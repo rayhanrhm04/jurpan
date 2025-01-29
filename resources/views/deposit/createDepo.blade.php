@@ -8,9 +8,9 @@
         <div class="card">
             <h5 class="card-header"><i class="mdi mdi-wallet-plus-outline me-1"></i>Deposit Baru</h5>
             <div class="card-body">
-                <form method="POST">
+                <form action="{{route('deposit.store')}}" method="POST">
                     @csrf
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label class="form-label">Jenis Permintaan <span class="text-danger">*</span></label>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="type" id="otomatis" value="auto">
@@ -20,7 +20,7 @@
                             <input class="form-check-input" type="radio" name="type" id="manual" value="manual">
                             <label class="form-check-label" for="manual">Manual</label>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="mb-3">
                         <label class="form-label">Jenis Pembayaran <span class="text-danger">*</span></label>
                         <div class="form-check">
@@ -31,24 +31,25 @@
                             <input class="form-check-input" type="radio" name="payment" id="ewallet" value="ewallet">
                             <label class="form-check-label" for="ewallet">E-Wallet / Scan QRIS / All Bank ( Virtual Account )</label>
                         </div>
-                        <div class="form-check">
+                        {{-- <div class="form-check">
                             <input class="form-check-input" type="radio" name="payment" id="pulsa" value="pulsa">
                             <label class="form-check-label" for="pulsa">Pulsa</label>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Metode Pembayaran <span class="text-danger">*</span></label>
                         <select class="form-control" name="method" id="method">
                             <option value="0">Pilih Jenis Pembayaran & Permintaan</option>
                         </select>
+                        <input type="hidden" id="method_name" name="method_name">
                     </div>
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label class="form-label">Minimal Deposit</label>
                         <div class="input-group">
                             <div class="input-group-text">Rp.</div>
                             <input type="text" class="form-control" id="min-amount" value="0" readonly>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="mb-3 d-none" id="phone">
                         <label class="form-label">Nomor Pengirim</label>
                         <div class="input-group">
@@ -101,6 +102,72 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Referensi elemen
+            const paymentInputs = document.querySelectorAll('input[name="payment"]');
+            const methodSelect = document.getElementById('method');
+            const phoneField = document.getElementById('phone');
+
+            // Data metode pembayaran berdasarkan jenis pembayaran
+            const methods = {
+                bank: [
+                    { value: '2', text: 'Bank BRI' },
+                    { value: '3', text: 'Bank CIMB' },
+                    { value: '4', text: 'Bank BNI' },
+                    { value: '5', text: 'Bank Mandiri' },
+                    { value: '6', text: 'Bank Maybank' },
+                    { value: '7', text: 'Bank Permata' },
+                    { value: '8', text: 'Bank Danamon' },
+                    { value: '9', text: 'Bank BNI' },
+                    { value: '10', text: 'Bank BSI' },
+                    { value: '11', text: 'Bank BNC (Neo Commerce)' },
+                    { value: '10', text: 'Bank BSI' },
+                    
+                ],
+                ewallet: [
+                    { value: '13', text: 'DANA' },
+                    { value: '11', text: 'QRIS (All Bank)' }
+                ],
+                pulsa: [
+                    { value: 'telkomsel', text: 'Pulsa Telkomsel' },
+                    { value: 'xl', text: 'Pulsa XL' },
+                    { value: 'indosat', text: 'Pulsa Indosat' }
+                ]
+            };
+
+            // Event listener untuk input jenis pembayaran
+            paymentInputs.forEach(input => {
+                input.addEventListener('change', function () {
+                    // Kosongkan metode pembayaran
+                    methodSelect.innerHTML = '<option value="0">Pilih Metode Pembayaran</option>';
+
+                    // Tambahkan metode pembayaran berdasarkan pilihan
+                    if (methods[this.value]) {
+                        methods[this.value].forEach(method => {
+                            const option = document.createElement('option');
+                            option.value = method.value;
+                            option.text = method.text;
+                            methodSelect.appendChild(option);
+                        });
+                    }
+
+                    // Tampilkan atau sembunyikan input nomor telepon untuk jenis pulsa
+                    if (this.value === 'pulsa') {
+                        phoneField.classList.remove('d-none');
+                    } else {
+                        phoneField.classList.add('d-none');
+                    }
+                });
+            });
+        });
+
+        document.getElementById("method").addEventListener("change", function() {
+            const methodName = this.options[this.selectedIndex].text;
+            const methodSelect = document.getElementById('method_name').value = methodName;
+        });
+    </script>
 @endsection
 
 @section('script')

@@ -28,6 +28,11 @@
                         <li>Anda harus menunggu maksimal selama 3 hari setelah pesanan Anda Success / Selesai untuk dapat menggunakan tombol Refill.</li>
                     </ul>
                 </div>
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        <strong>Success: </strong>{{ session('success') }}
+                    </div>
+                @endif
                 <form method="get" class="row">
                     <div class="col-md-3">
                         <div class="input-group mb-3">
@@ -71,19 +76,30 @@
                         <thead>
                             <tr class="text-uppercase">
                                 <th>ID</th>
+                                <th>Kategori</th>
                                 <th>Layanan</th>
                                 <th>Target</th>
-                                <th>Harga</th>
+                                <th>Harga Layanan</th>
                                 <th>Jumlah</th>
-                                <th>Jumlah Awal</th>
-                                <th>Jumlah Kurang</th>
+                                <th>Total Order</th>
                                 <th>Status</th>
-                                <th>Refill</th>
                                 <th>Tgl. Pesanan</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- Add your dynamic rows here --}}
+                           @foreach ($orders as $order)
+                                <tr>
+                                    <td>{{$order->id}}</td>
+                                    <td>{{$order->category?->name}}</td>
+                                    <td>{{$order->service?->service_name}}</td>
+                                    <td>{{$order->target}}</td>
+                                    <td>Rp. {{number_format($order->price)}}</td>
+                                    <td>{{$order->quantity}}</td>
+                                    <td>Rp. {{number_format($order->amount)}}</td>
+                                    <td>{{$order->status}}</td>
+                                    <td>{{$order->created_at->format('d-m-Y')}}</td>
+                                </tr>
+                           @endforeach
                         </tbody>
                     </table>
                 </div>

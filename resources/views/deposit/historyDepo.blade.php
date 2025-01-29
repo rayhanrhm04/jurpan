@@ -75,16 +75,23 @@
                                 <th>ID</th>
                                 <th>Pembayaran</th>
                                 <th>Jenis</th>
-                                <th>Metode</th>
+             
                                 <th>Jumlah Transfer</th>
-                                <th>Saldo Diterima</th>
                                 <th>Status</th>
-                                <th>Refill</th>
                                 <th>Tgl. Deposit</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Your table data here -->
+                            @foreach($deposits as $depo)
+                                <tr>
+                                    <td>{{$depo->id}}</td>
+                                    <td>{{$depo->method_name}}</td>
+                                    <td>{{$depo->type_payment}}</td>
+                                    <td>Rp. {{number_format($depo->amount)}}</td>
+                                    <td>{{$depo->status}}</td>
+                                    <td>{{$depo->created_at->format('d-m-Y')}}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

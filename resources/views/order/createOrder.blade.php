@@ -21,12 +21,33 @@
                 </div>
                 @php session()->forget('result_r'); @endphp
                 @endif
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        <strong>Success: </strong>{{ session('success') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        <strong>Error: </strong>{{ session('error') }}
+                    </div>
+                @endif
 
-                <form method="POST">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <strong>Terjadi Kesalahan:</strong>
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form action="{{route("order.store")}}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Kategori <span class="text-danger">*</span></label>
-                        <select class="select2 form-control" id="category">
+                        <select class="select2 form-control" id="category" name="category_id">
                             <option value="0">Pilih...</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -36,30 +57,30 @@
                     
                     <div class="mb-3">
                         <label class="form-label">Layanan <span class="text-danger">*</span></label>
-                        <select class="select2 form-control" name="service" id="service">
+                        <select class="select2 form-control" name="service_id" id="service">
                             <option value="0">Pilih Kategori</option>
                         </select>
                     </div>
                     
                     <div class="mb-3">
                         <label class="form-label">Deskripsi</label>
-                        <div class="form-control" style="white-space: pre-wrap;" id="description" name="desc" readonly>-</div>
+                        <div class="form-control" style="white-space: pre-wrap;" id="description" name="description" readonly>-</div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Minimal Pesanan</label>
-                            <input type="text" class="form-control" value="0" id="min-amount" readonly>
+                            <input type="text" class="form-control" value="0" id="min-amount" name="min_amount" readonly>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Maksimal Pesanan</label>
-                            <input type="text" class="form-control" value="0" id="max-amount" readonly>
+                            <input type="text" class="form-control" value="0" id="max-amount" name="max_amount" readonly>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Harga / 1000</label>
                             <div class="input-group">
                                 <div class="input-group-text">Rp</div>
-                                <input type="text" class="form-control" value="0" id="price" readonly>
+                                <input type="text" class="form-control" value="0" id="price" name="price" readonly>
                                 <input type="hidden" id="rate" value="0" />
                             </div>
                         </div>
@@ -85,7 +106,7 @@
                             <label class="form-label">Total Harga</label>
                             <div class="input-group">
                                 <div class="input-group-text">Rp</div>
-                                <input type="text" class="form-control" value="0" id="total-price" name="total-price" readonly>
+                                <input type="text" class="form-control" value="0" id="total-price" name="amount" readonly>
                             </div>
                         </div>
                     </div>
